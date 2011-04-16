@@ -43,3 +43,8 @@ This can happen if you have 2 themes scheduled to appear at the same time. The t
 = 1.0 =
 * First version
 * [Created April 16, 2011]
+
+== Upgrade Notice ==
+
+= 1.1 =
+* Fixed error where installed plugin always asked to upgrade
