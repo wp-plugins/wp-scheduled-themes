@@ -4,7 +4,7 @@
  * Plugin URI: http://www.itegritysolutions.ca/community/wordpress/scheduled-themes
  * Description: Schedule a theme to display on the live site for holidays or special events.
  * Author: Adam Erstelle
- * Version 1.0
+ * Version: 1.1
  * Author URI: http://www.itegritysolutions.ca/
  * 
  * PLEASE NOTE: If you make any modifications to this plugin file directly, please contact me so that
