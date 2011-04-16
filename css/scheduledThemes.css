@@ -1,0 +1,53 @@
+@CHARSET "ISO-8859-1";
+/* Admin Page Layout Styles */
+#scheduledThemesAdminPage{
+	width:550px;
+}
+
+#scheduledThemesAdminPage div div{
+	display:block; 
+	float:left;
+}
+.scheduledItem{
+	float:left;
+	clear:both;
+}
+#bottomControls div{
+	clear:both;
+	float:left;
+	margin-top:8px;
+}
+.themeCol{width:180px;}
+.themeCol select{width:170px;}
+.startTimeCol, .endTimeCol{width:100px;}
+.repeatYearlyCol {width:50px;}
+.scheduledItem .repeatYearlyCol{height:26px;line-height: 26px;}
+.hiddenInput {display:none;}
+.deleteLink, .addScheduledItem {
+	text-decoration:none;
+}
+
+#newItemTemplate {display:none;}
+
+/* Admin Page Formatting */
+#scheduledItemsHeader{
+	font-weight:bold;
+}
+
+#message{
+	background-color: #d6ffe0;
+	border:1px solid green;
+	padding:5px;
+	width:500px;
+	margin-bottom:10px;
+	font-weight:bold;
+}
+
+label.error{
+	display:none !important;
+}
+
+input.error, select.error {
+	border: 2px solid red !important;
+	background-color: #FFFFD5 !important;
+}
