@@ -4,7 +4,7 @@
  * Plugin URI: http://www.itegritysolutions.ca/community/wordpress/scheduled-themes
  * Description: Schedule a theme to display on the live site for holidays or special events.
  * Author: Adam Erstelle
- * Version: 1.1
+ * Version: 1.2
  * Author URI: http://www.itegritysolutions.ca/
  * 
  * PLEASE NOTE: If you make any modifications to this plugin file directly, please contact me so that
@@ -241,13 +241,13 @@ if(!class_exists('ScheduledThemes')){
 					
 					$wpdb->query($sql);
 				}
-			if($_POST['newItemKeys'])
-				foreach ($_POST['newItemKeys'] as $newKey){
-					$themeName=$_POST["newItem$newKey-themeName"];
-					$startTime=$_POST["newItem$newKey-startTime"] . ' 00:00:00';
-					$endTime=$_POST["newItem$newKey-endTime"] . ' 23:59:59';
+			if($_POST['newThemeKeys'])
+				foreach ($_POST['newThemeKeys'] as $newKey){
+					$themeName=$_POST["newTheme$newKey-themeName"];
+					$startTime=$_POST["newTheme$newKey-startTime"] . ' 00:00:00';
+					$endTime=$_POST["newTheme$newKey-endTime"] . ' 23:59:59';
 					$repeat=0;
-					if($_POST["newItem$newKey-repeatYearly"]=='on')
+					if($_POST["newTheme$newKey-repeatYearly"]=='on')
 						$repeat=1;
 					
 					$sql = "INSERT INTO $tableName (themeName,startTime,endTime,repeatYearly) values ('$themeName','$startTime','$endTime',$repeat);";

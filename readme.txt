@@ -4,7 +4,7 @@ Tags: plugin, theme, holidays, scheduled, schedule, cron, cronjob, theme switche
 Donate Link:  http://www.itegritysolutions.ca/community/wordpress/scheduled-themes
 Requires at least: 3.0
 Tested up to: 3.1
-Version: 1.1
+Version: 1.2
 Stable tag: 1.1
 
 Schedule a theme to display on the live site for holidays or special events.
@@ -36,6 +36,10 @@ This can happen if you have 2 themes scheduled to appear at the same time. The t
 
 == Changelog ==
 
+= 1.2 =
+* Fixed compatability with WP-Scheduled-Styles (yet to be released)
+* [Updated August 13, 2011]
+
 = 1.1 =
 * Fixed error where installed plugin always asked to upgrade
 * [Updated April 16, 2011]
@@ -45,6 +49,9 @@ This can happen if you have 2 themes scheduled to appear at the same time. The t
 * [Created April 16, 2011]
 
 == Upgrade Notice ==
+
+= 1.2 =
+* Fixed compatability with WP-Scheduled-Styles (yet to be released)
 
 = 1.1 =
 * Fixed error where installed plugin always asked to upgrade

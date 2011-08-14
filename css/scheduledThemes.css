@@ -27,10 +27,10 @@
 	text-decoration:none;
 }
 
-#newItemTemplate {display:none;}
+#newThemeTemplate {display:none;}
 
 /* Admin Page Formatting */
-#scheduledItemsHeader{
+#scheduledThemesHeader{
 	font-weight:bold;
 }
 

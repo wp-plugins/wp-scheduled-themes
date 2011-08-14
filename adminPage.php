@@ -15,7 +15,7 @@ if($_POST['submit'])
 <div id="message">New schedule saved successfully.</div>
 <?php }?>
 
-<div id='scheduledItemsHeader'>
+<div id='scheduledThemesHeader'>
 	<div class='themeCol'>Theme</div>
 	<div class='startTimeCol'>Start Date</div>
 	<div class='endTimeCol'>End Date</div>
@@ -23,10 +23,10 @@ if($_POST['submit'])
 </div>
 
 <!-- This div contains a blank record that will be used by jQuery as a template for adding new records -->
-<div id='newItemTemplate'>
-	<div class='scheduledItem' id='newItemNUMZ'>
+<div id='newThemeTemplate'>
+	<div class='scheduledItem' id='newThemeNUMZ'>
 		<div class='themeCol'>
-			<select name='newItemNUMZ-themeName' class='themeSelector required'>
+			<select name='newThemeNUMZ-themeName' class='themeSelector required'>
 				<option value=''>Select Theme</option>
 				<?php foreach($theme_names as $theme_name){ ?>
 						<option value="<?php echo $theme_name; ?>"><?php echo $theme_name; ?></option>					
@@ -34,25 +34,25 @@ if($_POST['submit'])
 			</select>
 		</div>
 		<div class='startTimeCol'>
-			<input name='newItemNUMZ-startTime' type='text' size='11' class='datePicker required' maxlength="10" />
+			<input name='newThemeNUMZ-startTime' type='text' size='11' class='datePicker required' maxlength="10" />
 		</div>
 		<div class='endTimeCol'>
-			<input name='newItemNUMZ-endTime' type='text' size='11' class='datePicker required' maxlength="10" />
+			<input name='newThemeNUMZ-endTime' type='text' size='11' class='datePicker required' maxlength="10" />
 		</div>
 		<div class='repeatYearlyCol'>
-			<input type='checkbox' name='newItemNUMZ-repeatYearly' />
+			<input type='checkbox' name='newThemeNUMZ-repeatYearly' />
 		</div>
 		<div class='miscCol'>
-			<input type='checkbox' name='newItemNUMZ-delete' class='hiddenInput' />
-			<input type="hidden" name='newItemKeys[]' class='hiddenInput' value='NUMZ' />
+			<input type='checkbox' name='newThemeNUMZ-delete' class='hiddenInput' />
+			<input type="hidden" name='newThemeKeys[]' class='hiddenInput' value='NUMZ' />
 			<a class='deleteLink' href='#'>Delete</a>
 		</div>
 	</div>
 </div>
-<form method="post" id="scheduledItemsForm">
-<div id="scheduledItemsFormError"></div>
+<form method="post" id="scheduledThemesForm">
+<div id="scheduledThemesFormError"></div>
     
-<div id="scheduledItems">
+<div id="scheduledThemes">
 	<?php
 	wp_nonce_field('scheduledThemesNonceField');
 	//loop through each scheduled item, displaying a record to the admin
@@ -100,7 +100,7 @@ if($_POST['submit'])
 	}?>
 	</div>
 	<div id='bottomControls'>
-		<div id='addItem'><a class='addScheduledItem' href='#'>Add New Scheduled Theme</a></div>
+		<div id='addItem'><a class='addScheduledTheme' href='#'>Add New Scheduled Theme</a></div>
 		<div id='submitButton'>
 			<input id='submit' class='button-primary' type='submit' value='Save Changes' name='submit' />
 		</div>
