@@ -3,7 +3,7 @@ Contributors: wpgwiggum
 Tags: plugin, theme, holidays, scheduled, schedule, cron, cronjob, theme switcher
 Donate Link:  http://www.itegritysolutions.ca/community/wordpress/scheduled-themes
 Requires at least: 3.0
-Tested up to: 3.1
+Tested up to: 3.2
 Version: 1.2
 Stable tag: 1.1
 
