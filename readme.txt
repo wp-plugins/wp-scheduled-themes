@@ -5,7 +5,7 @@ Donate Link:  http://www.itegritysolutions.ca/community/wordpress/scheduled-them
 Requires at least: 3.0
 Tested up to: 3.2
 Version: 1.2
-Stable tag: 1.1
+Stable tag: 1.2
 
 Schedule a theme to display on the live site for holidays or special events.
 
@@ -29,6 +29,10 @@ This section describes how to install the plugin and get it working.
 = My Theme is scheduled to appear, why does it not show up? =
 
 This can happen if you have 2 themes scheduled to appear at the same time. The theme that was scheduled to appear the earliest in the year will always appear.
+
+= I want to schedule changes, but I don't want to duplicate my entire theme for a minor change =
+
+Maybe wp-scheduled-styles is the plugin for you! This plugin will let you specify an additional .css file to be included from your theme.
 
 == Screenshots ==
 
