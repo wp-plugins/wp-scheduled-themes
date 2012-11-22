@@ -3,9 +3,9 @@ Contributors: wpgwiggum
 Tags: plugin, theme, holidays, scheduled, schedule, cron, cronjob, theme switcher
 Donate Link:  http://www.itegritysolutions.ca/community/wordpress/scheduled-themes
 Requires at least: 3.0
-Tested up to: 3.2
-Version: 1.2
-Stable tag: 1.2
+Tested up to: 3.5
+Version: 1.2.1
+Stable tag: 1.2.1
 
 Schedule a theme to display on the live site for holidays or special events.
 
@@ -39,6 +39,10 @@ Maybe wp-scheduled-styles is the plugin for you! This plugin will let you specif
 1. This is the settings page. Pretty simple.
 
 == Changelog ==
+
+= 1.2.1 =
+* Updates supported WP version numbers
+* [Updated November 22, 2012]
 
 = 1.2 =
 * Fixed compatability with WP-Scheduled-Styles (yet to be released)

@@ -4,7 +4,7 @@
  * Plugin URI: http://www.itegritysolutions.ca/community/wordpress/scheduled-themes
  * Description: Schedule a theme to display on the live site for holidays or special events.
  * Author: Adam Erstelle
- * Version: 1.2
+ * Version: 1.2.1
  * Author URI: http://www.itegritysolutions.ca/
  * 
  * PLEASE NOTE: If you make any modifications to this plugin file directly, please contact me so that
@@ -197,7 +197,7 @@ if(!class_exists('ScheduledThemes')){
 			global $wpdb;
 			$tableName = $wpdb->prefix ."scheduledthemes";
 			$sql="SELECT themeName FROM $tableName WHERE now() BETWEEN startTime AND endTime AND STATUS='active';";
-			$overRiddenTheme = $wpdb->get_var($wpdb->prepare($sql));
+			$overRiddenTheme = $wpdb->get_var($sql);
 			if(strlen($overRiddenTheme)>0 && $this->activeThemes[$overRiddenTheme]!=''){
 				$this->themeShouldBeOverridden=true;
 				$this->themeToOverrideWith=$this->activeThemes[$overRiddenTheme];
