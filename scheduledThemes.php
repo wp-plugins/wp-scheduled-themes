@@ -165,9 +165,9 @@ if(!class_exists('ScheduledThemes')){
 		 * Adds the javascript and CSS to the administration page
 		 */
 		function enqueueItems(){
-			wp_enqueue_script('datepickerScript',$this->pluginURL .'/js/jquery-ui-datepicker.js',array('jquery','jquery-ui-core'));
+			wp_enqueue_script('jquery-ui-datepicker');
 			wp_enqueue_script('jQueryValidator',$this->pluginURL .'/js/jquery.validate.min.js',array('jquery'));
-			wp_enqueue_script('scheduledThemesScript',$this->pluginURL .'/js/scheduledThemes.js',array('jquery','jquery-ui-core','datepickerScript','jQueryValidator'));
+			wp_enqueue_script('scheduledThemesScript',$this->pluginURL .'/js/scheduledThemes.js',array('jquery','jquery-ui-core','jquery-ui-datepicker','jQueryValidator'));
 			
 			wp_enqueue_style('datepickerStyle',$this->pluginURL .'/css/jquery-ui-1.8.11.custom.css');
 			wp_enqueue_style('scheduledThemesStyle',$this->pluginURL .'/css/scheduledThemes.css');
