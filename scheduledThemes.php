@@ -4,7 +4,7 @@
  * Plugin URI: http://www.itegritysolutions.ca/community/wordpress/scheduled-themes
  * Description: Schedule a theme to display on the live site for holidays or special events.
  * Author: Adam Erstelle
- * Version: 1.3.1
+ * Version: 1.4.1
  * Author URI: http://www.itegritysolutions.ca/
  * 
  * PLEASE NOTE: If you make any modifications to this plugin file directly, please contact me so that
@@ -33,6 +33,7 @@ if(!class_exists('ScheduledThemes')){
 		var $pluginURL;
 		var $pluginDIR;
 		var $activeThemes;
+		var $localized = "wp-scheduled-themes";
 		
 		/**
 		 * PHP4 Constructor
@@ -42,9 +43,15 @@ if(!class_exists('ScheduledThemes')){
 		/**
 		 * Class Constructor, Checks to see if theme should be overridden and registers the plugin with Wordpress
 		 */
-		function __construct(){
+		function __construct(){			
 			$this->pluginURL = WP_PLUGIN_URL . '/' . dirname(plugin_basename(__FILE__));
 			$this->pluginDIR = WP_PLUGIN_DIR . '/' . dirname(plugin_basename(__FILE__));
+
+			//Language Setup
+			$locale = get_locale();
+			$mo = $this->pluginDIR . "/languages/" . strtolower($locale).".mo";
+			load_textdomain($this->localized, $mo);
+			
 			$this->query_wordpress_apis();
 			$this->determine_theme_override();
 			$this->register_hooks();
@@ -149,7 +156,7 @@ if(!class_exists('ScheduledThemes')){
 		 * Adds the Administration link under Appearance in the Wordpress Menu for Administrators
 		 */
 		function admin_menu_link(){
-			add_theme_page('Scheduled Themes', 'Scheduled Themes', 'administrator', basename(__FILE__), array(&$this,'admin_options_page'));
+			add_theme_page(__('Scheduled Themes',$this->localized), __('Scheduled Themes',$this->localized), 'administrator', basename(__FILE__), array(&$this,'admin_options_page'));
 		}
 		
 		/**
