@@ -1,0 +1,84 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wp-scheduled-themes\n"
+"POT-Creation-Date: 2014-03-14 15:06-0500\n"
+"PO-Revision-Date: 2014-03-17 12:06+0100\n"
+"Last-Translator: Borisa Djuraskovic <borisad@webhostinghub.com>\n"
+"Language-Team: ITegrity Solutions\n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;_e;gettext;gettext_noop\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../adminPage.php:3
+msgid "Scheduled Themes"
+msgstr "Zakazane teme"
+
+#: ../adminPage.php:4
+msgid ""
+"This plugin allows a wordpress administrator to schedule a different theme "
+"to display on the website for holidays or special events for all visitors."
+msgstr ""
+"Ovaj plugin omogućava wordpress administratoru da rasporedi različite teme "
+"za prikaz na websajtu za praynike ili specijalne dogadjaje za posetioce"
+
+#: ../adminPage.php:5
+msgid "This plugin brought to you for free by"
+msgstr "Ovaj plugin vam je besplatno omogućio"
+
+#: ../adminPage.php:15
+msgid "New schedule saved successfully"
+msgstr "Novi raspored"
+
+#: ../adminPage.php:19
+msgid "Theme"
+msgstr "Teme"
+
+#: ../adminPage.php:20
+msgid "Start Date"
+msgstr "Početni datum"
+
+#: ../adminPage.php:21
+msgid "End Date"
+msgstr "Krajnji datum"
+
+#: ../adminPage.php:22
+msgid "Yearly"
+msgstr "Godišnje"
+
+#: ../adminPage.php:30 ../adminPage.php:72
+msgid "Select Theme"
+msgstr "Izabrati temu"
+
+#: ../adminPage.php:48 ../adminPage.php:97
+msgid "Delete"
+msgstr "Obrisati"
+
+#: ../adminPage.php:103
+msgid "Add New Scheduled Theme"
+msgstr "Dodati novi raspored tema"
+
+#: ../adminPage.php:105
+msgid "Save Changes"
+msgstr "Sačuvati promene"
+
+#: ../warning.php:2
+msgid "Warning: The themes"
+msgstr "Upozorenje: Teme"
+
+#: ../warning.php:2
+msgid "are scheduled to display, but the themes are not installed"
+msgstr "su zakazani za prikaz. ali teme nisu instalirane"
+
+#: ../warning.php:3
+msgid ""
+"Please re-install the themes, or visit the WP Scheduled Themes settings page "
+"to correct this problem"
+msgstr ""
+"Molim vas reinstalirajte teme ili posetite straniczu sa WP Zakazane teme "
+"postavkama"

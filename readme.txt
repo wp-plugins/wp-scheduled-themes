@@ -5,7 +5,7 @@ Donate Link:  http://www.itegritysolutions.ca/community/wordpress/scheduled-them
 Requires at least: 3.0
 Tested up to: 3.9
 Version: 1.4.1
-Stable tag: 1.3.1
+Stable tag: 1.4.1
 
 Schedule a theme to display on the live site for holidays or special events. (Available from Appearance - Scheduled Themes)
 
@@ -42,7 +42,8 @@ Maybe wp-scheduled-styles is the plugin for you! This plugin will let you specif
 
 = 1.4.1 =
 * Added support for multiple languages
-* [Updated March 14, 2014]
+* Added Spanish and Serbian translations (thanks to Ognjen Djuraskovic at firstsiteguide.com
+* [Updated March 23, 2014]
 
 = 1.3.1 =
 * Updated to support WordPress 3.8 and new look
