@@ -5,7 +5,7 @@ Donate Link:  http://www.itegritysolutions.ca/community/wordpress/scheduled-them
 Requires at least: 3.0
 Tested up to: 4.0.1
 Version: 1.6
-Stable tag: 1.5
+Stable tag: 1.6
 
 Schedule a theme to display on the live site for holidays or special events. (Available from Appearance - Scheduled Themes)
 
