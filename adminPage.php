@@ -4,7 +4,11 @@
 <p><?php _e('This plugin allows a wordpress administrator to schedule a different theme to display on the website for holidays or special events for all visitors.',$this->localized);?></p>
 <p><?php _e('This plugin brought to you for free by',$this->localized);?> <a href="http://www.itegritysolutions.ca/community/wordpress/scheduled-themes/" target="_blank">ITegrity Solutions</a>.</p>
 <?php 
-$theme_names = array_keys($this->activeThemes);
+$theme_names = array();
+foreach($this->activeThemes as $theme)
+{
+	$theme_names[]=$theme;
+}
 natcasesort($theme_names);
 
 $themeSchedule = $this->read_schedule('active');
@@ -74,7 +78,7 @@ if($_POST['submit'])
 					foreach($theme_names as $theme_name){
 						$themeSelected="";
 						if($theme_name==$themeName)
-							$themeSelected='" selected="selected"';
+							$themeSelected='selected="selected"';
 						?>
 						<option value="<?php echo $theme_name; ?>" <?php echo $themeSelected?> ><?php echo $theme_name; ?></option>					
 						<?php 

@@ -34,6 +34,7 @@ if(!class_exists('ScheduledThemes')){
 		var $pluginDIR;
 		var $activeThemes;
 		var $localized = "wp-scheduled-themes";
+		var $debugLines = array();
 		
 		/**
 		 * Class Constructor, Checks to see if theme should be overridden and registers the plugin with Wordpress
@@ -56,7 +57,7 @@ if(!class_exists('ScheduledThemes')){
 		 * Makes the calls into the Wordpress API so that results are 'cached' and APIs only called once
 		 */
 		function query_wordpress_apis(){
-			$this->activeThemes = get_themes();
+			$this->activeThemes = wp_get_themes();
 		}
 		
 		/**
@@ -80,7 +81,7 @@ if(!class_exists('ScheduledThemes')){
 				wp_schedule_event(time(), 'daily', 'ScheduledThemesDailyTask');
 			
 			if($this->themeShouldBeOverridden){
-				add_filter('template', array(&$this,'get_template'));
+ 				add_filter('template', array(&$this,'get_template'));
 	 			add_filter('stylesheet', array(&$this,'get_stylesheet'));
 			}
 		}
@@ -110,7 +111,16 @@ if(!class_exists('ScheduledThemes')){
 			$results = $wpdb->get_results($sql);
 			
 			foreach($results as $result){
-				if(!in_array($result->themeName, array_keys($this->activeThemes)))
+				$resultFound=false;
+				foreach($this->activeThemes as $theme)
+				{
+					if($result->themeName == $theme){
+						$resultFound=true;
+						break;			
+					}
+				}
+				
+				if(!$resultFound)
 					$missingThemes .= ", " . $result->themeName;
 			}
 			
@@ -161,6 +171,12 @@ if(!class_exists('ScheduledThemes')){
 			echo "\n<!-- WP Scheduled Themes is installed -->";
 			if($this->themeShouldBeOverridden)
 				echo "\n<!-- Activated theme has been overridden with: ". $this->themeToOverrideWith['Name']." -->\n";
+			/*
+			echo "\n<!-- WP Scheduled Themes debug: \n";
+			foreach($this->debugLines as $debug)
+				echo $debug . "\n";
+			echo "\n END DEBUG -->";
+			*/
 		}
 		
 		/**
@@ -202,9 +218,20 @@ if(!class_exists('ScheduledThemes')){
 			$tableName = $wpdb->prefix ."scheduledthemes";
 			$sql="SELECT themeName FROM $tableName WHERE now() BETWEEN startTime AND endTime AND STATUS='active';";
 			$overRiddenTheme = $wpdb->get_var($sql);
-			if(strlen($overRiddenTheme)>0 && $this->activeThemes[$overRiddenTheme]!=''){
-				$this->themeShouldBeOverridden=true;
-				$this->themeToOverrideWith=$this->activeThemes[$overRiddenTheme];
+			$this->debugLines[]="Got an overRiddenTheme of $overRiddenTheme";
+			if(strlen($overRiddenTheme)>0 ){
+				$resultFound=false;
+				foreach($this->activeThemes as $theme)
+				{
+					$this->debugLines[]="Checking to see if " . $overRiddenTheme . " = " . $theme;
+					if($theme == $overRiddenTheme)
+					{
+						$this->debugLines[]="Yay it does, marking it to be the theme we override with";
+						$this->themeShouldBeOverridden=true;
+						$this->themeToOverrideWith = $theme;
+						break;
+					}
+				}
 			}
 		}
 		
@@ -266,8 +293,10 @@ if(!class_exists('ScheduledThemes')){
 		 * @return The template that this plugin thinks should be displayed
 		 */
 		function get_template($template){
-			if($this->themeShouldBeOverridden)
-				return $this->themeToOverrideWith['Template'];
+			if($this->themeShouldBeOverridden){
+				$this->debugLines[]="Overriding the template in the template filter";
+				return $this->themeToOverrideWith->get_template();
+			}
 			return $template;
 		}
 		
@@ -277,8 +306,10 @@ if(!class_exists('ScheduledThemes')){
 		 * @return The stylesheet that this plugin thinks should be displayed to the user
 		 */
 		function get_stylesheet($stylesheet){
-			if($this->themeShouldBeOverridden)
-				return $this->themeToOverrideWith['Stylesheet'];
+			if($this->themeShouldBeOverridden){
+				$this->debugLines[]="Overriding the stylesheet in the stylesheet filter";
+				return $this->themeToOverrideWith->get_stylesheet();
+			}
 			return $stylesheet;
 		}
 	}
