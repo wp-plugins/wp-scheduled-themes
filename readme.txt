@@ -42,6 +42,11 @@ Maybe wp-scheduled-styles is the plugin for you! This plugin will let you specif
 
 == Changelog ==
 
+= 1.7 =
+* Updated to work with latest version of WordPress
+* Changed WordPress calls for getting list of themes to be more modern approach, addressing some issues being caused in rare scenarios
+* [Updated April 25, 2015]
+
 = 1.6 =
 * Updated to work with latest version of WordPress
 * Removed support for PHP4, which was causing some issues with logging in PHP 5.4
